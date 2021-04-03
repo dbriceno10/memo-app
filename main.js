@@ -2,5 +2,6 @@ window.onload = () => {//esto espera hasta que todo el DOM cargue y luego ejecut
     const parrafo = document.getElementById("text");
     console.log(parrafo.innerHTML);
     console.log(parrafo.innerText);
-    parrafo.innerText = "Texto Actualizado"
+    // parrafo.innerText = "Texto Actualizado"
+    parrafo.innerHTML = "<li>elemento1</li><li>elemento2</li>"
 }
