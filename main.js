@@ -19,14 +19,16 @@ const render = () => {
             elemento.parentNode.removeChild(elemento)
             // console.log(elemento.parentNode, i);
             tareas.splice(i,1);
-            const tareasString = JSON.stringify(tareas);
-            localStorage.setItem("tareas", tareasString);
+            actualizarTareas(tareas);
             render();//la función se llama dentro de si misma
         })
         
     })
 }
-
+const actualizarTareas = (tareas) => {
+    const tareasString = JSON.stringify(tareas);
+    localStorage.setItem("tareas", tareasString);
+}
 render();
 const form = document.getElementById("form-tareas");
 form.onsubmit = (ev) => {
@@ -35,7 +37,6 @@ form.onsubmit = (ev) => {
     document.getElementById("form-tareas").reset();
     console.log(tarea);
     tareas.push(tarea);
-    const tareasString = JSON.stringify(tareas);
-    localStorage.setItem("tareas", tareasString);
+    actualizarTareas(tareas);
     render();
 }
