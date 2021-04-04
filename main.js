@@ -20,7 +20,7 @@ const render = () => {
             // console.log(elemento.parentNode, i);
             tareas.splice(i,1);
             actualizarTareas(tareas);
-            render();//la función se llama dentro de si misma
+            render();//la función se llama dentro de si misma, actualiza la lista para borrar los datos que se han eliminando
         })
         
     })
@@ -35,8 +35,8 @@ form.onsubmit = (ev) => {
     ev.preventDefault();
     const tarea = document.getElementById("tarea").value;
     document.getElementById("form-tareas").reset();
-    console.log(tarea);
+    // console.log(tarea);
     tareas.push(tarea);
     actualizarTareas(tareas);
-    render();
+    render();//actualiza la lista
 }
