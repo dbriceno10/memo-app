@@ -20,3 +20,13 @@ main h4 {
 main .btn {
     font-size: 2rem;
 }
+
+.salida {
+    font-size: 2rem;
+    list-style: none;
+}
+
+main {
+    width: 90%;
+    margin: 0 auto;
+}
