@@ -16,7 +16,7 @@
 //     console.log("dato " + dato)
 //     return dato
 // }
-
+const tareas = [];
 const form = document.getElementById("form-tareas");
 form.onsubmit = (ev) => {
     ev.preventDefault();
@@ -25,5 +25,11 @@ form.onsubmit = (ev) => {
     // todo.value = '';
     document.getElementById("form-tareas").reset();
     console.log(tarea);
-    
+    tareas.push(tarea);
+    const lista_Tareas = document.getElementById("lista-tareas");
+    lista_Tareas.innerHTML = "";//va limpiando lo que esté dentro de lista_Tareas
+    for (let i = 0; i< tareas.length; i++) {
+        lista_Tareas.innerHTML+= "<li>" + tareas[i] + "</li>"
+
+    }
 }
