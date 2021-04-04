@@ -22,7 +22,9 @@ form.onsubmit = (ev) => {
     const elementos = document.querySelectorAll("#lista-tareas li");
     elementos.forEach((elemento, i) => {
         elemento.addEventListener("click",() => {
-            console.log(elemento, i);
+            elemento.parentNode.removeChild(elemento)
+            console.log(elemento.parentNode, i);
+            tareas.splice(i,1);
         })
         
     })
