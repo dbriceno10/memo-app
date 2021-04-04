@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aplicación de Productos</title>
+    <title>Memo App</title>
     <link rel="stylesheet" href="./bootstrap.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <header>
         <div class="container text-center py-5">
-            <h1 class="display-1"><b>List App:</b> Organiza tus notas</h1>
+            <h1 class="display-3"><b>List App:</b> Organiza tus notas</h1>
         </div>
     </header>
-<main>
+<main class="container">
     <div class="row pt-5 pricipal">
-        <div class="col-md-4">
+        <div class="col-md-5 entrada">
             <div class="card">
                 <div class="card-header">
-                    <h4>Introduce una Tarea</h4>
+                    <h4 class="display-5 text-center">Introduce una Tarea</h4>
                     <form action="" id="form-tareas" class="card-body">
                         <div class="form-group">
-                            <input type="text" id="tarea" class="form-control">
+                            <input type="text" id="tarea" class="form-control" placeholder="Tareas" required>
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Enviar" id="go" class="btn btn-primary btn-block"></div>
@@ -32,7 +32,8 @@
         </div>
         
         <!-- <input type="submit" value="Enviar" id="go" onclick="capturar();"> -->
-        <div class="col-md-8">
+        <div class="col-md-6 salida">
+            <h4 class="display-5 text-center">Tareas Pendientes</h4>
             <ol id="lista-tareas"></ol>
         </div>
     </div>

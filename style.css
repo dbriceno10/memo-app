@@ -8,9 +8,12 @@ html {
     font-size: 62.5%;
 }
 
+/* header div h1 {
+    font-size: 5rem !important;
+} */
 
 main h4 {
-    font-size: 3rem;
+    font-size: 2.3rem;
 }
 
 .form-control {
@@ -21,12 +24,26 @@ main .btn {
     font-size: 2rem;
 }
 
+.entrada {
+    margin-bottom: 20px;
+
+}
+
 .salida {
     font-size: 2rem;
     list-style: none;
 }
 
-main {
+.salida h4 {
+    /* margin-top: 10px; */
+    padding-bottom: 10px;
+}
+
+/* main {
     width: 90%;
     margin: 0 auto;
+} */
+
+div ol li a {
+    margin-left: 10px;
 }

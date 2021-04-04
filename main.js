@@ -7,20 +7,30 @@
 //     console.log("dato " + dato)
 //     return dato
 // }
+// let date = new Date();
+// let day = date.getDate();
+// let month = date.getMonth() + 1;
+// let year = date.getUTCFullYear();
 const tareas = JSON.parse(localStorage.getItem("tareas")) || [];
 const render = () => {
     const lista_Tareas = document.getElementById("lista-tareas");
     //es necesario que map lleve un return o nos va a devolver indefinido, map nos permite hacer iteraciones, map transforma el elemento en lo que sea que nosotros estemos retornando
     // const tareas_Template = tareas.map(element => "<li>" + element + "</li>");
     //const tareas_Template = tareas.map(element => `<li>${element}</li>`);
+    // const tareas_Template = tareas.map(element => 
+    //     `<div class="card text-center mb-4">
+    //         <div class="card-body">
+    //         <li class="salida">${element} fecha: ${day}/${month}/${year}</li>
+    //         </div>
+    //     </div>`
+    // );
     const tareas_Template = tareas.map(element => 
         `<div class="card text-center mb-4">
             <div class="card-body">
-            <li class="salida">${element}</li>
+            <li class="salida">${element}<a href="#" class="btn btn-danger" name="delete">Delete</a></li>
             </div>
         </div>`
     );
-    console.log(tareas_Template);
     lista_Tareas.innerHTML = tareas_Template.join("");//join toma todos los elementos de un arreglo y los junta según lo que le pasemos
     const elementos = document.querySelectorAll("#lista-tareas li");
     elementos.forEach((elemento, i) => {
