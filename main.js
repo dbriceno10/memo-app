@@ -27,10 +27,10 @@ form.onsubmit = (ev) => {
     console.log(tarea);
     tareas.push(tarea);
     const lista_Tareas = document.getElementById("lista-tareas");
-    const tareas_Template = tareas.map(element => {//es necesario que map lleve un return o nos va a devolver indefinido, map nos permite hacer iteraciones, map transforma el elemento en lo que sea que nosotros estemos retornando
-        return "<li>" + element + "</li>"
-    })
-    console.log(tareas_Template);
+    //es necesario que map lleve un return o nos va a devolver indefinido, map nos permite hacer iteraciones, map transforma el elemento en lo que sea que nosotros estemos retornando
+    const tareas_Template = tareas.map(element => "<li>" + element + "</li>");//simplificando, recordar que las funciones flecha con esta forma llevan un return implícito
+    lista_Tareas.innerHTML = tareas_Template.join("");//join toma todos los elementos de un arreglo y los junta según lo que le pasemos
+    
 //     lista_Tareas.innerHTML = "";//va limpiando lo que esté dentro de lista_Tareas
 //     for (let i = 0; i< tareas.length; i++) {
 //         lista_Tareas.innerHTML+= "<li>" + tareas[i] + "</li>"
