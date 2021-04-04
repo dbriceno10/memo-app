@@ -7,7 +7,7 @@
 //     console.log("dato " + dato)
 //     return dato
 // }
-
+const tareas = JSON.parse(localStorage.getItem("tareas")) || [];
 const render = () => {
     const lista_Tareas = document.getElementById("lista-tareas");
     //es necesario que map lleve un return o nos va a devolver indefinido, map nos permite hacer iteraciones, map transforma el elemento en lo que sea que nosotros estemos retornando
@@ -17,15 +17,17 @@ const render = () => {
     elementos.forEach((elemento, i) => {
         elemento.addEventListener("click",() => {
             elemento.parentNode.removeChild(elemento)
-            console.log(elemento.parentNode, i);
+            // console.log(elemento.parentNode, i);
             tareas.splice(i,1);
+            const tareasString = JSON.stringify(tareas);
+            localStorage.setItem("tareas", tareasString);
             render();//la función se llama dentro de si misma
         })
         
     })
 }
 
-const tareas = [];
+render();
 const form = document.getElementById("form-tareas");
 form.onsubmit = (ev) => {
     ev.preventDefault();
@@ -33,5 +35,7 @@ form.onsubmit = (ev) => {
     document.getElementById("form-tareas").reset();
     console.log(tarea);
     tareas.push(tarea);
+    const tareasString = JSON.stringify(tareas);
+    localStorage.setItem("tareas", tareasString);
     render();
 }
