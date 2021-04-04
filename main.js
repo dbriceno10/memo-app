@@ -27,9 +27,12 @@ form.onsubmit = (ev) => {
     console.log(tarea);
     tareas.push(tarea);
     const lista_Tareas = document.getElementById("lista-tareas");
-    lista_Tareas.innerHTML = "";//va limpiando lo que esté dentro de lista_Tareas
-    for (let i = 0; i< tareas.length; i++) {
-        lista_Tareas.innerHTML+= "<li>" + tareas[i] + "</li>"
-
-    }
+    const tareas_Template = tareas.map(element => {//es necesario que map lleve un return o nos va a devolver indefinido, map nos permite hacer iteraciones, map transforma el elemento en lo que sea que nosotros estemos retornando
+        return "<li>" + element + "</li>"
+    })
+    console.log(tareas_Template);
+//     lista_Tareas.innerHTML = "";//va limpiando lo que esté dentro de lista_Tareas
+//     for (let i = 0; i< tareas.length; i++) {
+//         lista_Tareas.innerHTML+= "<li>" + tareas[i] + "</li>"
+//     }
 }
