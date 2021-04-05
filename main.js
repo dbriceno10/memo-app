@@ -25,9 +25,9 @@ const render = () => {
     //     </div>`
     // );
     const tareas_Template = tareas.map(element => 
-        `<div class="card text-center mb-4">
+        `<div class="card text-center mb-4 shadow">
             <div class="card-body">
-            <li class="salida">${element}<a href="#" class="btn btn-danger" name="delete">Delete</a></li>
+            <li class="salida">${element}</li>
             </div>
         </div>`
     );

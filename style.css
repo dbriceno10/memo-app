@@ -6,11 +6,16 @@
 
 html {
     font-size: 62.5%;
+    font-family: "DM Sans", sans-serif;
 }
 
-/* header div h1 {
-    font-size: 5rem !important;
-} */
+body {
+    background-color: #eee;
+}
+
+header div h1 {
+    font-size: 3.5rem !important;
+}
 
 main h4 {
     font-size: 2.3rem;
@@ -44,6 +49,11 @@ main .btn {
     margin: 0 auto;
 } */
 
-div ol li a {
-    margin-left: 10px;
+.shadow {
+    box-shadow: 0px 2px 8px rgba(0,0,0, 0.8);
+}
+
+.borrar {
+    font-size: 1.8rem;
+    font-style: italic;
 }
