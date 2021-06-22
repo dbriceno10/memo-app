@@ -1,29 +1,6 @@
-// function clearForm() {
-//     document.getElementById("form-tareas").reset()
-//     //el método ".reset()"
-// }
-// const capturar = () => {
-//     const dato = document.getElementById("tarea").value;
-//     console.log("dato " + dato)
-//     return dato
-// }
-// let date = new Date();
-// let day = date.getDate();
-// let month = date.getMonth() + 1;
-// let year = date.getUTCFullYear();
 const tareas = JSON.parse(localStorage.getItem("tareas")) || [];
 const render = () => {
     const lista_Tareas = document.getElementById("lista-tareas");
-    //es necesario que map lleve un return o nos va a devolver indefinido, map nos permite hacer iteraciones, map transforma el elemento en lo que sea que nosotros estemos retornando
-    // const tareas_Template = tareas.map(element => "<li>" + element + "</li>");
-    //const tareas_Template = tareas.map(element => `<li>${element}</li>`);
-    // const tareas_Template = tareas.map(element => 
-    //     `<div class="card text-center mb-4">
-    //         <div class="card-body">
-    //         <li class="salida">${element} fecha: ${day}/${month}/${year}</li>
-    //         </div>
-    //     </div>`
-    // );
     const tareas_Template = tareas.map(element => 
         `<div class="card text-center mb-4 shadow">
             <div class="card-body">
