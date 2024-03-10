@@ -1,4 +1,30 @@
 const tareas = JSON.parse(localStorage.getItem("tareas")) || [];
+
+const actualizarTareas = (tareas) => {
+  const tareasString = JSON.stringify(tareas);
+  localStorage.setItem("tareas", tareasString);
+};
+
+const removeNote = (elemento, i, tareas) => {
+  elemento.parentNode.removeChild(elemento);
+  tareas.splice(i, 1);
+  actualizarTareas(tareas);
+  render();
+};
+
+const showAlert = (elemento, i, tareas) => {
+  swal({
+    title: "Información",
+    text: "¿Desea eliminar la nota?",
+    icon: "info",
+    buttons: ["Cancelar", "Aceptar"],
+  }).then((result) => {
+    if (result) {
+      removeNote(elemento, i, tareas);
+    }
+  });
+};
+
 const render = () => {
   const lista_Tareas = document.getElementById("lista-tareas");
   const tareas_Template = tareas.map(
@@ -13,17 +39,9 @@ const render = () => {
   const elementos = document.querySelectorAll("#lista-tareas li");
   elementos.forEach((elemento, i) => {
     elemento.addEventListener("click", () => {
-      elemento.parentNode.removeChild(elemento);
-      // console.log(elemento.parentNode, i);
-      tareas.splice(i, 1);
-      actualizarTareas(tareas);
-      render(); //la función se llama dentro de si misma, actualiza la lista para borrar los datos que se han eliminando
+      showAlert(elemento, i, tareas);
     });
   });
-};
-const actualizarTareas = (tareas) => {
-  const tareasString = JSON.stringify(tareas);
-  localStorage.setItem("tareas", tareasString);
 };
 render();
 const form = document.getElementById("form-tareas");
